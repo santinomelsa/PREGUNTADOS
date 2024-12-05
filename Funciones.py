@@ -95,15 +95,15 @@ def cargar_preguntas(ruta):
 cargar_preguntas("preguntas.csv")
 
 def crear_cabecera(diccionario: dict, separador: str) -> str:
-    # Genera la cabecera a partir de las claves del diccionario
+    #Genera la cabecera a partir de las claves del diccionario
     lista_claves = list(diccionario.keys())
     cabecera = separador.join(lista_claves)
     return cabecera
 
 def crear_dato_csv(diccionario: dict, separador: str) -> str:
-    # Genera una línea de datos a partir de los valores del diccionario
+    #Genera una línea de datos a partir de los valores del diccionario
     lista_valores = list(diccionario.values())
-    # Convierto todo a str para evitar que rompa al escribir
+    #Convierto todo a str para evitar que rompa al escribir
     for i in range(len(lista_valores)):
         lista_valores[i] = str(lista_valores[i])
     dato = separador.join(lista_valores)
@@ -111,7 +111,7 @@ def crear_dato_csv(diccionario: dict, separador: str) -> str:
 
 def guardar_preguntas(nombre_archivo: str, lista: list) -> bool:
     if type(lista) == list and len(lista) > 0:
-        # Crear cabecera utilizando el primer diccionario de la lista
+        #Crear cabecera utilizando el primer diccionario de la lista
         cabecera = crear_cabecera(lista[0], ",")
         with open(nombre_archivo, "w", encoding="utf-8") as archivo:
             archivo.write(cabecera + "\n")
@@ -123,7 +123,7 @@ def guardar_preguntas(nombre_archivo: str, lista: list) -> bool:
         retorno = False
     return retorno
 
-# Ejemplo de guardar las preguntas en un nuevo archivo
+#Ejemplo de guardar las preguntas en un nuevo archivo
 
 
 def guardar_puntuacion(nombre_archivo: str, nombre: str, puntuacion: int) -> bool:
@@ -144,10 +144,7 @@ def guardar_puntuacion(nombre_archivo: str, nombre: str, puntuacion: int) -> boo
 
 #RANKING
 def leer_json(nombre_archivo: str, lista: list) -> bool:
-    """
-    Lee el archivo JSON y carga sus datos en una lista.
-    Retorna True si la lectura fue exitosa, False si hubo un error o si el archivo no existe.
-    """
+    #LEE ARCHIVO JSON
     if os.path.exists(nombre_archivo):
         with open(nombre_archivo, "r", encoding="utf-8") as archivo:
             lista.clear()  #Limpiar la lista antes de cargar nuevos datos

@@ -25,9 +25,9 @@ TAMAÑO_BOTON = (350,100)
 CUADRO_TEXTO = (400,300)
 TAMAÑO_BOTON_VOLUMEN = (100,100)
 TAMAÑO_BOTON_VOLVER = (70,70)
-CLICK_SONIDO = pygame.mixer.Sound("click.mp3")
-ERROR_SONIDO = pygame.mixer.Sound("error.mp3")
-ACIERTO_SONIDO = pygame.mixer.Sound("acierto.mp3")
+CLICK_SONIDO = pygame.mixer.Sound("sonidos/click.mp3")
+ERROR_SONIDO = pygame.mixer.Sound("sonidos/error.mp3")
+ACIERTO_SONIDO = pygame.mixer.Sound("sonidos/acierto.mp3")
 
 CANTIDAD_VIDAS = 3
 VIDAS_INICIALES = 3

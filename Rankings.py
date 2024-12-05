@@ -6,7 +6,7 @@ pygame.init()
 fuente = pygame.font.SysFont("Arial Narrow",28)
 fuente_titulo = pygame.font.SysFont("Arial Narrow",40)
 #BOTON VOLVER
-boton_volver = crear_boton("boton_volver.png", TAMAÑO_BOTON_VOLVER)
+boton_volver = crear_boton("imagenes/boton_volver.png", TAMAÑO_BOTON_VOLVER)
 
 
 #ORDENA DE MAYOR A MENOR
@@ -25,7 +25,7 @@ def mostrar_rankings(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Even
                 CLICK_SONIDO.play()
                 retorno = "menu"
     
-    fondo_ranking = pygame.image.load("champions.jpeg")
+    fondo_ranking = pygame.image.load("imagenes/champions.jpeg")
     fondo_ranking = pygame.transform.scale(fondo_ranking,VENTANA)
     pantalla.blit(fondo_ranking,(0,0))
     boton_volver["rectangulo"] = pantalla.blit(boton_volver["superficie"],(890,10))

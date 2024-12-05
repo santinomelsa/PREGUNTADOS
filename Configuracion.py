@@ -4,14 +4,14 @@ from Funciones import *
 
 pygame.init()
 
-
+#FUENTE
 fuente_volumen = pygame.font.SysFont("Karmatic Arcade",120)
 
 #CREAR BOTONES
-boton_suma = crear_boton("boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
-boton_resta = crear_boton("boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
-boton_volver = crear_boton("boton_volver.png", TAMAÑO_BOTON_VOLVER)
-boton_mutear = crear_boton("boton_mute.png", TAMAÑO_BOTON_VOLVER)
+boton_suma = crear_boton("imagenes/boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
+boton_resta = crear_boton("imagenes/boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
+boton_volver = crear_boton("imagenes/boton_volver.png", TAMAÑO_BOTON_VOLVER)
+boton_mutear = crear_boton("imagenes/boton_mute.png", TAMAÑO_BOTON_VOLVER)
 
 
 def mostrar_configuracion(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event],datos_juego:dict) -> str:
@@ -53,17 +53,17 @@ def mostrar_configuracion(pantalla:pygame.Surface,cola_eventos:list[pygame.event
                 print("DISMINUIR VOLUMEN")
                 if datos_juego["volumen_musica"] > 0:
                     datos_juego["volumen_musica"] -= 5
-                
-    fondo_confi = pygame.image.load("fondo_confi.jpg")
-    fondo_confi = pygame.transform.scale(fondo_confi,VENTANA)
+
+    #CREAR FONDO      
+    fondo_confi = cargar_imagen("imagenes/fondo_confi.jpg", VENTANA)      
     pantalla.blit(fondo_confi,(0,0))
-    #UBICACION
+    #UBICACION BOTONES
     boton_suma["rectangulo"] = pantalla.blit(boton_suma['superficie'],(800,300))
     boton_resta["rectangulo"] = pantalla.blit(boton_resta['superficie'],(100,300))
     boton_volver["rectangulo"] = pantalla.blit(boton_volver['superficie'],(920,10))
     boton_mutear["rectangulo"] = pantalla.blit(boton_mutear['superficie'],(10,10))
     
-
+    #MOSTRAR PORCENTAJE
     mostrar_texto(pantalla,f"{datos_juego["volumen_musica"]} %",(380,270),fuente_volumen,COLOR_NEGRO)
 
     return retorno

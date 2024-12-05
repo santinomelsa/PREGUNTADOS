@@ -11,7 +11,7 @@ from Opciones import *
 pygame.init()
 pygame.mixer.init()
 pygame.display.set_caption("MI PRIMER JUEGO 114")
-icono = pygame.image.load("icono2.png")
+icono = pygame.image.load("imagenes/icono2.png")
 pygame.display.set_icon(icono)
 pantalla = pygame.display.set_mode(VENTANA)
 corriendo = True
@@ -44,7 +44,7 @@ while corriendo:
     elif ventana_actual == "juego":
         if bandera_musica == False:
             porcentaje_volumen = datos_juego["volumen_musica"] / 100
-            pygame.mixer.music.load("musica.mp3")
+            pygame.mixer.music.load("sonidos/musica.mp3")
             pygame.mixer.music.set_volume(porcentaje_volumen)
             pygame.mixer.music.play(-1)
             bandera_musica = True

@@ -7,7 +7,7 @@ pygame.init()
 
 fuente = pygame.font.SysFont("Arial Narrow",40)
 
-imagen_cuadro = cargar_imagen("cuadro_terminado.jpeg", CUADRO_TEXTO)
+imagen_cuadro = cargar_imagen("imagenes/cuadro_terminado.jpeg", CUADRO_TEXTO)
 cuadro = {}
 cuadro["superficie"] = imagen_cuadro
 cuadro["rectangulo"] = cuadro["superficie"].get_rect()
@@ -45,7 +45,7 @@ def mostrar_fin_juego(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Eve
                 nombre=""
                 reiniciar_estadisticas(datos_juego)
 
-    fondo_terminado = cargar_imagen("llorando.jpg", VENTANA)             
+    fondo_terminado = cargar_imagen("imagenes/llorando.jpg", VENTANA)             
     pantalla.blit(fondo_terminado,(0,0))   
     pantalla.blit(cuadro["superficie"], (10, 10))
     

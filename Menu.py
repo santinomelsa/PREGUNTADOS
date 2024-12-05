@@ -7,18 +7,16 @@ fuente_menu = pygame.font.SysFont("Karmatic Arcade",40)
 fuente_menu2 = pygame.font.SysFont("Karmatic Arcade",30)
 lista_botones = []
 
-imagen_boton = pygame.image.load("menu.jpeg")
+imagen_boton = pygame.image.load("imagenes/menu.jpeg")
 imagen_boton = pygame.transform.scale(imagen_boton, TAMAÑO_BOTON)
 
 for i in range(5):
     boton = {}
-    #boton["superficie"] = pygame.Surface(TAMAÑO_BOTON)
-    # boton["superficie"].fill(COLOR_AZUL)
     boton["superficie"] = imagen_boton.copy()
     boton["rectangulo"] = boton["superficie"].get_rect()
     lista_botones.append(boton)
 
-fondo = pygame.image.load("fondo2.jpg")
+fondo = pygame.image.load("imagenes/fondo2.jpg")
 fondo = pygame.transform.scale(fondo,VENTANA)
 
 def mostrar_menu(pantalla:pygame.Surface,cola_eventos:list[pygame.event.Event])-> str:

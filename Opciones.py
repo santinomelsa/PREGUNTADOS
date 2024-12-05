@@ -5,30 +5,29 @@ from Funciones import *
 pygame.init()
 
 #IMAGEN DE FONDO
-fondo_opciones = cargar_imagen("fondo_opciones.jpg", VENTANA)
-# fondo_opciones = pygame.image.load("fondo_opciones.jpg")
-# fondo_opciones = pygame.transform.scale(fondo_opciones, VENTANA) 
+fondo_opciones = cargar_imagen("imagenes/fondo_opciones.jpg", VENTANA)
+
 
 #FUENTE
 fuente_opciones = pygame.font.SysFont("Arial Narrow", 40)
 
 #IMAGEN MENOS
-cuadro_menos = pygame.image.load("boton_menos.png") 
+cuadro_menos = pygame.image.load("imagenes/boton_menos.png") 
 cuadro_menos = pygame.transform.scale(cuadro_menos, TAMAÑO_BOTON_VOLUMEN)
 #IMAGEN MAS
-cuadro_mas = pygame.image.load("boton_mas.png") 
+cuadro_mas = pygame.image.load("imagenes/boton_mas.png") 
 cuadro_mas = pygame.transform.scale(cuadro_mas, TAMAÑO_BOTON_VOLUMEN)
 
 #BOTONES
-boton_sumar_puntos = crear_boton("boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
-boton_restar_puntos = crear_boton("boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
-boton_sumar_errores = crear_boton("boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
-boton_restar_errores = crear_boton("boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
-boton_sumar_vidas = crear_boton("boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
-boton_restar_vidas = crear_boton("boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
-boton_sumar_tiempo = crear_boton("boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
-boton_restar_tiempo = crear_boton("boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
-boton_volver = crear_boton("boton_volver.png", TAMAÑO_BOTON_VOLVER)
+boton_sumar_puntos = crear_boton("imagenes/boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
+boton_restar_puntos = crear_boton("imagenes/boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
+boton_sumar_errores = crear_boton("imagenes/boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
+boton_restar_errores = crear_boton("imagenes/boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
+boton_sumar_vidas = crear_boton("imagenes/boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
+boton_restar_vidas = crear_boton("imagenes/boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
+boton_sumar_tiempo = crear_boton("imagenes/boton_mas.png", TAMAÑO_BOTON_VOLUMEN)
+boton_restar_tiempo = crear_boton("imagenes/boton_menos.png", TAMAÑO_BOTON_VOLUMEN)
+boton_volver = crear_boton("imagenes/boton_volver.png", TAMAÑO_BOTON_VOLVER)
 
 
 
