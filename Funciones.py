@@ -32,14 +32,14 @@ def actualizar_estadisticas(pregunta, correcta):
         pregunta["aciertos"] += 1
     else:
         pregunta["fallos"] += 1
-    # Calcular porcentaje de aciertos
+    #CALCULAR PORCENTAJE
     if pregunta["veces_preguntada"] > 0:
         pregunta["porcentaje_aciertos"] = (pregunta["aciertos"] / pregunta["veces_preguntada"]) * 100
     
 def verificar_respuesta(datos_juego:dict,pregunta_actual:dict,respuesta:int) -> bool:
     correcta = respuesta == pregunta_actual["respuesta_correcta"]
     
-    # Actualizar estadísticas de la pregunta
+    #GUARDAR ESTADISTICAS
     actualizar_estadisticas(pregunta_actual, correcta)
     guardar_preguntas("preguntas.csv", preguntas)
     
@@ -70,12 +70,11 @@ def reiniciar_estadisticas(datos_juego:dict):
     datos_juego["vidas"] = CANTIDAD_VIDAS
 
 #CSV A DICCIONARIO
-
 def cargar_preguntas(ruta):
     global preguntas
     print(os.path.abspath(ruta))
     preguntas = []
-    with open(ruta, "r", encoding="utf-8", errors="replace") as archivo:
+    with open(ruta, "r", encoding="utf-8") as archivo:
         lector_csv = csv.DictReader(archivo)
         for fila in lector_csv:
             pregunta = {
